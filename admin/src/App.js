@@ -6,6 +6,7 @@ import { Topbar } from "./pages/global/Topbar";
 import { Route, Routes } from "react-router-dom";
 import { Dashboard } from "./pages/dashboard";
 import { FAQ } from "./pages/faq";
+import { Form } from "./pages/form";
 
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
                 {/* <Route path="/list" element={<List />} /> */}
                 {/* <Route path="/mentors" element={<Mentors />} /> */}
                 {/* <Route path="/students" element={<Students />} /> */}
-                {/* <Route path="/form" element={<Form />} /> */}
+                <Route path="/form" element={<Form />} />
                 {/* <Route path="/chart" element={<Chart />} /> */}
                 <Route path="/faq" element={<FAQ />} />
               </Routes>

@@ -1,6 +1,6 @@
-import { Box, IconButton, InputBase, useTheme} from "@mui/material"
+import { Box, IconButton, InputBase, Menu, MenuItem, useTheme} from "@mui/material"
 import {tokens, ColorModeContext} from "../../theme";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
@@ -10,12 +10,24 @@ import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 
 
-
 export const Topbar = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
     const colorMode = useContext(ColorModeContext);
 
+    // DROP DOWN MENU
+    const dropMenuItems = [
+        {title: "Profile"},
+        {title: "Setting"},
+        {title: "Log out"},
+    ]
+    const [anchorEl, setAnchorEl] = useState(null);
+    const handleClick = (e) => {
+        setAnchorEl(e.currentTarget);
+    };
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
     return (
         <Box display="flex" justifyContent="space-between" p={2}>
             {/* SEARCH BAR */}
@@ -36,12 +48,33 @@ export const Topbar = () => {
                 <IconButton>
                     <NotificationsOutlinedIcon />
                 </IconButton>
-                <IconButton>
-                    <SettingsOutlinedIcon />
-                </IconButton>
-                <IconButton>
+                <Box>
+                    <IconButton
+                        aria-controls="simple-menu"
+                        aria-haspopup="true"
+                        onClick={handleClick}
+                        aria-label="Click để mở rộng"
+                        title="Click để mở rộng"
+                    >
+                        <PersonOutlinedIcon />
+                    </IconButton>
+                    <Menu
+                        id="simple-menu"
+                        anchorEl={anchorEl}
+                        keepMounted
+                        open={Boolean(anchorEl)}
+                        onClose={handleClose}
+                    >
+                        {dropMenuItems.map((item) => (
+                        <MenuItem onClick={handleClose} key={item.title} value={item.title}>
+                            {item.title}
+                        </MenuItem>
+                        ))}
+                    </Menu>
+                </Box>
+                {/* <IconButton>
                     <PersonOutlinedIcon />
-                </IconButton>
+                </IconButton> */}
             </Box>
         </Box>
     )
