@@ -51,14 +51,47 @@ const checkoutForm = yup.object().shape({
 
 export const Form = () => {
     // RESPONSIVE FORM
-    const isNonMobile = useMediaQuery("(min-width: 900px)")
+    const isNonMobile = useMediaQuery("(min-width: 600px)")
     // LẤY DATA TỪ BÀN PHÍM FORM
-    const [formData, setFormData] = useState({});
-    const handleFormSubmit = (values) => {
+    const [studentCode, setStudentCode] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [userName, setUserName] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirm, setConfirm] = useState('');
+    const [email, setEmail] = useState('');
+    const [major, setMajor] = useState('');
+    const [avatar, setAvatar] = useState('');
+    
+    const handleFormSubmit = (event) => {
+        event.preventDefault(); 
+        const newFormData = {
+            studentCode: studentCode,
+            firstName: firstName,
+            lastName: lastName,
+            userName: userName,
+            password: password,
+            confirm: confirm,
+            email: email,
+            major: major,
+            avatar: avatar,
+        }
+        console.log(newFormData);
         alert('Thêm mới thành công');
-        console.log(typeof formData);
-        values.preventDefault(); 
     };
+    // CLEAN FORM
+    const resetForm = () => [
+        setStudentCode(""),
+        setFirstName(""),
+        setLastName(""),
+        setUserName(""),
+        setPassword(""),
+        setConfirm(""),
+        setEmail(""),
+        setMajor(""),
+        setAvatar(""),
+        console.log("cleaned")
+    ]
     return (
         <Box m="20px">
             <Header title="THÊM MỚI" subtitle="Tạo hồ sơ người dùng mới"/>
@@ -73,9 +106,8 @@ export const Form = () => {
                     errors,
                     touched,
                     handleBlur,
-                    handleChange,
-                    handleSubmit,
-                    resetForm
+                    // handleChange,
+                    handleSubmit
                 }) => (
                     <form onSubmit={handleSubmit}>
                         {/* FORM */}
@@ -94,9 +126,11 @@ export const Form = () => {
                                 type='text'
                                 label="Mã sinh viên"
                                 onBlur={handleBlur}
-                                onChange={handleChange}
-                                value={values.studentCode}
+                                // onChange={handleChange}
+                                onChange={(e) => setStudentCode(e.target.value)}
+                                value={studentCode}
                                 name='studentCode'
+                                
                                 error={!!touched.studentCode && !! errors.studentCode}
                                 helperText={touched.studentCode && errors.studentCode}
                                 sx={{ gridColumn: "span 2" }}
@@ -108,8 +142,8 @@ export const Form = () => {
                                 type='text'
                                 label="Tài khoản"
                                 onBlur={handleBlur}
-                                onChange={handleChange}
-                                value={values.userName}
+                                onChange={(e) => setUserName(e.target.value)}
+                                value={userName}
                                 name='userName'
                                 error={!!touched.userName && !! errors.userName}
                                 helperText={touched.userName && errors.userName}
@@ -122,8 +156,8 @@ export const Form = () => {
                                 type='text'
                                 label="Tên"
                                 onBlur={handleBlur}
-                                onChange={handleChange}
-                                value={values.firstName}
+                                onChange={(e) => setFirstName(e.target.value)}
+                                value={firstName}
                                 name='firstName'
                                 error={!!touched.firstName && !! errors.firstName}
                                 helperText={touched.firstName && errors.firstName}
@@ -136,8 +170,8 @@ export const Form = () => {
                                 type='text'
                                 label="Họ và Tên lót"
                                 onBlur={handleBlur}
-                                onChange={handleChange}
-                                value={values.lastName}
+                                onChange={(e) => setLastName(e.target.value)}
+                                value={lastName}
                                 name='lastName'
                                 error={!!touched.lastName && !! errors.lastName}
                                 helperText={touched.lastName && errors.lastName}
@@ -151,8 +185,8 @@ export const Form = () => {
                                 type='text'
                                 label="Email nội bộ"
                                 onBlur={handleBlur}
-                                onChange={handleChange}
-                                value={values.email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                value={email}
                                 name='email'
                                 error={!!touched.email && !! errors.email}
                                 helperText={touched.email && errors.email}
@@ -165,8 +199,8 @@ export const Form = () => {
                                 type='text'
                                 label="Chuyên ngành"
                                 onBlur={handleBlur}
-                                onChange={handleChange}
-                                value={values.major}
+                                onChange={(e) => setMajor(e.target.value)}
+                                value={major}
                                 name='major'
                                 error={!!touched.major && !! errors.major}
                                 helperText={touched.major && errors.major}
@@ -179,8 +213,8 @@ export const Form = () => {
                                 type='password'
                                 label="Mật khẩu"
                                 onBlur={handleBlur}
-                                onChange={handleChange}
-                                value={values.password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                value={password}
                                 name='password'
                                 error={!!touched.password && !! errors.password}
                                 helperText={touched.password && errors.password}
@@ -193,8 +227,8 @@ export const Form = () => {
                                 type='password'
                                 label="Xác nhận mật khẩu"
                                 onBlur={handleBlur}
-                                onChange={handleChange}
-                                value={values.confirm}
+                                onChange={(e) => setConfirm(e.target.value)}
+                                value={confirm}
                                 name='confirm'
                                 error={!!touched.confirm && !! errors.confirm}
                                 helperText={touched.confirm && errors.confirm}
@@ -207,8 +241,8 @@ export const Form = () => {
                                 type='text'
                                 label="Avatar"
                                 onBlur={handleBlur}
-                                onChange={handleChange}
-                                value={values.avatar}
+                                onChange={(e) => setAvatar(e.target.value)}
+                                value={avatar}
                                 name='avatar'
                                 error={!!touched.avatar && !! errors.avatar}
                                 helperText={touched.avatar && errors.avatar}
@@ -222,7 +256,7 @@ export const Form = () => {
                             <Button type="reset" onClick={resetForm} variant='contained' size='large'  sx={{fontWeight:"bold", marginRight:"20px"}}>
                                 Làm trống
                             </Button>
-                            <Button type="submit" onClick={handleFormSubmit} variant='contained' size='large' color='secondary' sx={{fontWeight:"bold"}}>
+                            <Button type="submit" onClick={handleFormSubmit} validationSchema={checkoutForm} variant='contained' size='large' color='secondary' sx={{fontWeight:"bold"}}>
                                 Tạo mới
                             </Button>
                         </Box>
