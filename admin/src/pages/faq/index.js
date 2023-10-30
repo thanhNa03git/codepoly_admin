@@ -16,8 +16,8 @@ export const FAQ =()=> {
                 <Header title="FAQ" subtitle="Trang câu hỏi thường gặp" />
     
                 <Accordion defaultExpanded={false}>
-                    <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
-                        <Typography variant="h5" color={colors.greenAccent[500]}>
+                    <AccordionSummary expandIcon={<ExpandMoreIcon/>} sx={{backgroundColor:colors.grey[900]}}>
+                        <Typography variant="h5" color={colors.greenAccent[400]}>
                             Chuyển đổi mail trường thành mail cá nhân
                         </Typography>
                     </AccordionSummary>
@@ -30,8 +30,8 @@ export const FAQ =()=> {
                 </Accordion>
                 {/*  */}
                 <Accordion defaultExpanded={false}>
-                    <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
-                        <Typography variant="h5" color={colors.greenAccent[500]}>
+                    <AccordionSummary expandIcon={<ExpandMoreIcon/>} sx={{backgroundColor:colors.grey[900]}}>
+                        <Typography variant="h5" color={colors.greenAccent[400]}>
                             Cách để lấy lại mật khẩu email FPT
                         </Typography>
                     </AccordionSummary>
@@ -44,8 +44,8 @@ export const FAQ =()=> {
                 </Accordion>
                 {/*  */}
                 <Accordion defaultExpanded={false}>
-                    <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
-                        <Typography variant="h5" color={colors.greenAccent[500]}>
+                    <AccordionSummary expandIcon={<ExpandMoreIcon/>} sx={{backgroundColor:colors.grey[900]}}>
+                        <Typography variant="h5" color={colors.greenAccent[400]}>
                             Hướng dẫn dùng website quản trị
                         </Typography>
                     </AccordionSummary>
@@ -59,8 +59,8 @@ export const FAQ =()=> {
                 </Accordion>
                 {/*  */}
                 <Accordion defaultExpanded={false}>
-                    <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
-                        <Typography variant="h5" color={colors.greenAccent[500]}>
+                    <AccordionSummary expandIcon={<ExpandMoreIcon/>} sx={{backgroundColor:colors.grey[900]}}>
+                        <Typography variant="h5" color={colors.greenAccent[400]}>
                             Đăng nhập và quản trị tại nhà không được
                         </Typography>
                     </AccordionSummary>

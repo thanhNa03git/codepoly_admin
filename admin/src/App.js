@@ -7,6 +7,10 @@ import { Route, Routes } from "react-router-dom";
 import { Dashboard } from "./pages/dashboard";
 import { FAQ } from "./pages/faq";
 import { Form } from "./pages/form";
+import { List } from "./pages/list";
+import { Mentors } from "./pages/mentors";
+import { Students } from "./pages/students";
+import { Chart } from "./pages/chart";
 
 
 function App() {
@@ -22,11 +26,11 @@ function App() {
               <Topbar setIsSidebar={setIsSidebar}/>
               <Routes>
                 <Route path="/" element={<Dashboard />} />
-                {/* <Route path="/list" element={<List />} /> */}
-                {/* <Route path="/mentors" element={<Mentors />} /> */}
-                {/* <Route path="/students" element={<Students />} /> */}
+                <Route path="/list" element={<List />} />
+                <Route path="/mentors" element={<Mentors />} />
+                <Route path="/students" element={<Students />} />
                 <Route path="/form" element={<Form />} />
-                {/* <Route path="/chart" element={<Chart />} /> */}
+                <Route path="/chart" element={<Chart />} />
                 <Route path="/faq" element={<FAQ />} />
               </Routes>
             </main>

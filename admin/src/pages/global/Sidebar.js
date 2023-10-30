@@ -7,7 +7,7 @@ import { tokens} from "../../theme";
 // Icons
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
-import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
+//import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
@@ -164,7 +164,7 @@ export const Sidebar = () => {
                         > Report </Typography>
                         <Item
                             title="Báo cáo thống kê"
-                            to="/bar"
+                            to="/chart"
                             icon={<BarChartOutlinedIcon />}
                             selected={selected}
                             setSelected={setSelected}

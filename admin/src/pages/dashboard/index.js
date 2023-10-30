@@ -13,7 +13,7 @@ import { StatItem } from "../../components/StatItem";
 
 const columns = [
     {field: 'id', headerName:'ID', width: 70},
-    {field: 'projectName', headerName:'Tiêu đề sản dự án', width: 300},
+    {field: 'projectName', headerName:'Tiêu đề sản phẩm dự án', width: 300},
     {field: 'major', headerName:'Chuyên ngành', width: 150},
     {field: 'owner', headerName:'Tác giả', width: 150},
     {field: 'timesView', headerName:'Số lượng truy cập', type: 'number', width: 170},
@@ -139,6 +139,16 @@ export const Dashboard = () => {
                         gridRow="span 3"
                         backgroundColor={colors.primary[400]}
                         p="30px"
+                        sx={{
+                            "& .MuiDataGrid-columnHeaders": {
+                                backgroundColor: colors.blueAccent[700],
+                                borderBottom: "none",
+                            },
+                            "& .MuiDataGrid-footerContainer": {
+                                borderTop: "none",
+                                backgroundColor: colors.blueAccent[700],
+                            },
+                        }}
                     >
                         <Typography variant="h5" fontWeight="600" paddingBottom={2}>
                             Danh sách sản phẩm có lượt truy cập nhiều nhất
