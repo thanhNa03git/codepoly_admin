@@ -212,16 +212,18 @@ export const Form = () => {
                                     <MenuItem value={3}>MOB</MenuItem>
                                 </Select>
                             </FormControl>
-                            {/* AVATAR */}
+                            {/* PASSWORD */}
                             <TextField
                                 fullWidth
                                 variant='filled'
-                                type='file'
-                                label="Avatar"
+                                disabled
+                                // type='password'
+                                type='text'
+                                label="Mật khẩu"
                                 onBlur={handleBlur}
-                                onChange={(e) => setAvatar(e.target.value)}
-                                value={avatar}
-                                name='avatar'
+                                onChange={(e) => setPassword(e.target.value)}
+                                value={password}
+                                name='password'
                                 sx={{ gridColumn: "span 2" }}
                             />
                             {/* ROLE */}
@@ -243,21 +245,18 @@ export const Form = () => {
                                     <MenuItem value={"adm"}>Admin</MenuItem>
                                 </Select>
                             </FormControl>
-                            {/* PASSWORD */}
-                            <TextField
+                            {/* AVATAR */}
+                            {/* <TextField
                                 fullWidth
                                 variant='filled'
-                                disabled
-                                // type='password'
-                                type='text'
-                                label="Mật khẩu"
+                                type='file'
+                                label="Avatar"
                                 onBlur={handleBlur}
-                                onChange={(e) => setPassword(e.target.value)}
-                                value={password}
-                                name='password'
+                                onChange={(e) => setAvatar(e.target.value)}
+                                value={avatar}
+                                name='avatar'
                                 sx={{ gridColumn: "span 2" }}
-                            />
-
+                            /> */}
                         </Box>
                         {/* BUTTON CREATE */}
                         <Box display="flex" justifyContent="center" marginTop={"30px"} >

@@ -11,6 +11,8 @@ import { List } from "./pages/list";
 import { Mentors } from "./pages/mentors";
 import { Students } from "./pages/students";
 import { Chart } from "./pages/chart";
+import { Profile } from "./pages/profile";
+import { ChangeInfo } from "./pages/changeinfo";
 
 
 function App() {
@@ -32,6 +34,10 @@ function App() {
                 <Route path="/form" element={<Form />} />
                 <Route path="/chart" element={<Chart />} />
                 <Route path="/faq" element={<FAQ />} />
+                {/* drop down */}
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/change" element={<ChangeInfo />} />
+                <Route path="/logout" element={<Chart />} />
               </Routes>
             </main>
           </div>

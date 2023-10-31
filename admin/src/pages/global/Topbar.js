@@ -1,13 +1,14 @@
-import { Box, IconButton, InputBase, Menu, MenuItem, useTheme} from "@mui/material"
+import { Box, IconButton, InputBase, Menu, MenuItem, Typography, useTheme} from "@mui/material"
 import {tokens, ColorModeContext} from "../../theme";
 import { useContext, useState } from "react";
 
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
-import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+// import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchIcon from "@mui/icons-material/Search";
+import { Link } from "react-router-dom";
 
 
 export const Topbar = () => {
@@ -17,9 +18,9 @@ export const Topbar = () => {
 
     // DROP DOWN MENU
     const dropMenuItems = [
-        {title: "Profile"},
-        {title: "Setting"},
-        {title: "Log out"},
+        {title: "Profile", to:"/profile"},
+        {title: "Setting", to:"/change"},
+        {title: "Log out", to:"/logout"},
     ]
     const [anchorEl, setAnchorEl] = useState(null);
     const handleClick = (e) => {
@@ -66,9 +67,15 @@ export const Topbar = () => {
                         onClose={handleClose}
                     >
                         {dropMenuItems.map((item) => (
-                        <MenuItem onClick={handleClose} key={item.title} value={item.title}>
-                            {item.title}
-                        </MenuItem>
+                        <Link to={item.to} 
+                        key={item.title} 
+                        value={item.title}
+                        style={{textDecoration:"none", color:"#868dfb"}}
+                        >
+                            <MenuItem onClick={handleClose}>
+                                <Typography>{item.title}</Typography>
+                            </MenuItem>
+                        </Link>
                         ))}
                     </Menu>
                 </Box>
