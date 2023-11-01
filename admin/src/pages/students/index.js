@@ -1,4 +1,4 @@
-import { Box, Button, Typography, useTheme } from "@mui/material";
+import { Box, Button, Link, Typography, useTheme } from "@mui/material";
 import { DataGridPremium,GridToolbar  } from "@mui/x-data-grid-premium";
 import { tokens } from "../../theme";
 import { mockData } from "../../data/mockData";
@@ -8,6 +8,7 @@ import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettin
 import Groups2OutlinedIcon from '@mui/icons-material/Groups2Outlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
+import { useDemoData } from "@mui/x-data-grid-generator";
 
 export const Students = () => {
     const theme = useTheme();
@@ -70,23 +71,30 @@ export const Students = () => {
             );
         },
     },
-]
+    ]
+    const data = useDemoData({
+        dataSet: "Student",
+        visibleFields: columns,
+        rowLength: 100
+    })
     return (
         <Box m="20px">
         <Box display="flex" justifyContent="space-between" >
             <Header title="DANH SÁCH SINH VIÊN" subtitle="Quản lý quyền tài khoản sinh viên" />
             <Box>
-                        <Button 
-                            sx={{backgroundColor:colors.blueAccent[700],
-                                color: colors.grey[100],
-                                fontSize: "14px",
-                                fontWeight: "bold",
-                                padding: "10px 20px"}}
-                            
-                        >
-                            <PersonAddAltIcon/> Thêm mới
-                        </Button>
-                    </Box>
+                <Link href="/form">
+                    <Button 
+                        sx={{backgroundColor:colors.blueAccent[700],
+                            color: colors.grey[100],
+                            fontSize: "14px",
+                            fontWeight: "bold",
+                            padding: "10px 20px"}}
+                        
+                    >
+                        <PersonAddAltIcon/> Thêm mới
+                    </Button>
+                </Link>
+            </Box>
         </Box>
         <Box
             // m="40px 0 0 0"
@@ -126,6 +134,19 @@ export const Students = () => {
             rows={mockData}
             columns={columns}
             components={{ Toolbar: GridToolbar }}
+            initialState={{
+                ...data.initialState,
+                filter:{
+                    ...data.initialState?.filter,
+                    filterModel:{
+                        items: [{
+                            field: "role",
+                            operator:  "contains",
+                            value: "student"
+                        }]
+                    }
+                }
+            }}
             />
         </Box>
         </Box>

@@ -1,4 +1,4 @@
-import { Box, Button, Typography, useTheme } from "@mui/material";
+import { Box, Button, Link, Typography, useTheme } from "@mui/material";
 import { DataGridPremium,GridToolbar  } from "@mui/x-data-grid-premium";
 import { tokens } from "../../theme";
 import { mockData } from "../../data/mockData";
@@ -76,16 +76,18 @@ export const List = () => {
         <Box display="flex" justifyContent="space-between" >
             <Header title="THÔNG TIN TẤT CẢ NGƯỜI DÙNG" subtitle="Quản lý tài khoản User" />
             <Box>
-                        <Button 
-                            sx={{backgroundColor:colors.blueAccent[700],
-                                color: colors.grey[100],
-                                fontSize: "14px",
-                                fontWeight: "bold",
-                                padding: "10px 20px"}}
-                            
-                        >
-                            <PersonAddAltIcon/> Thêm mới
-                        </Button>
+                        <Link href="/form">
+                            <Button 
+                                sx={{backgroundColor:colors.blueAccent[700],
+                                    color: colors.grey[100],
+                                    fontSize: "14px",
+                                    fontWeight: "bold",
+                                    padding: "10px 20px"}}
+                                
+                            >
+                                <PersonAddAltIcon/> Thêm mới
+                            </Button>
+                        </Link>
                     </Box>
         </Box>
         <Box
