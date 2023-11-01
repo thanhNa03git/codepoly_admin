@@ -9,6 +9,8 @@ import Groups2OutlinedIcon from '@mui/icons-material/Groups2Outlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
 import { useDemoData } from "@mui/x-data-grid-generator";
+import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
+import DriveFileRenameOutlineOutlinedIcon from '@mui/icons-material/DriveFileRenameOutlineOutlined';
 
 export const Mentors = () => {
     const theme = useTheme();
@@ -82,6 +84,30 @@ export const Mentors = () => {
         <Box display="flex" justifyContent="space-between" >
             <Header title="DANH SÁCH GIẢNG VIÊN VÀ TRỢ GIẢNG" subtitle="Quản lý quyền tài khoản giảng viên" />
             <Box>
+            <Link href="/" sx={{margin:"10px"}}>
+                    <Button 
+                        sx={{backgroundColor:colors.blueAccent[700],
+                            color: colors.grey[100],
+                            fontSize: "14px",
+                            fontWeight: "bold",
+                            padding: "10px 20px"}}
+                        
+                    >
+                        <DeleteOutlinedIcon/> Xóa
+                    </Button>
+                </Link>
+                <Link href="/" sx={{margin:"10px"}}>
+                    <Button 
+                        sx={{backgroundColor:colors.blueAccent[700],
+                            color: colors.grey[100],
+                            fontSize: "14px",
+                            fontWeight: "bold",
+                            padding: "10px 20px"}}
+                        
+                    >
+                        <DriveFileRenameOutlineOutlinedIcon/> Chỉnh sửa
+                    </Button>
+                </Link>
                 <Link href="/form">
                     <Button 
                         sx={{backgroundColor:colors.blueAccent[700],

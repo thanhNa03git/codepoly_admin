@@ -8,6 +8,8 @@ import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettin
 import Groups2OutlinedIcon from '@mui/icons-material/Groups2Outlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
+import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
+import DriveFileRenameOutlineOutlinedIcon from '@mui/icons-material/DriveFileRenameOutlineOutlined';
 
 export const List = () => {
     const theme = useTheme();
@@ -76,19 +78,43 @@ export const List = () => {
         <Box display="flex" justifyContent="space-between" >
             <Header title="THÔNG TIN TẤT CẢ NGƯỜI DÙNG" subtitle="Quản lý tài khoản User" />
             <Box>
-                        <Link href="/form">
-                            <Button 
-                                sx={{backgroundColor:colors.blueAccent[700],
-                                    color: colors.grey[100],
-                                    fontSize: "14px",
-                                    fontWeight: "bold",
-                                    padding: "10px 20px"}}
-                                
-                            >
-                                <PersonAddAltIcon/> Thêm mới
-                            </Button>
-                        </Link>
-                    </Box>
+                <Link href="/" sx={{margin:"10px"}}>
+                    <Button 
+                        sx={{backgroundColor:colors.blueAccent[700],
+                            color: colors.grey[100],
+                            fontSize: "14px",
+                            fontWeight: "bold",
+                            padding: "10px 20px"}}
+                        
+                    >
+                        <DeleteOutlinedIcon/> Xóa
+                    </Button>
+                </Link>
+                <Link href="/" sx={{margin:"10px"}}>
+                    <Button 
+                        sx={{backgroundColor:colors.blueAccent[700],
+                            color: colors.grey[100],
+                            fontSize: "14px",
+                            fontWeight: "bold",
+                            padding: "10px 20px"}}
+                        
+                    >
+                        <DriveFileRenameOutlineOutlinedIcon/> Chỉnh sửa
+                    </Button>
+                </Link>
+                <Link href="/form" sx={{margin:"10px"}}>
+                    <Button 
+                        sx={{backgroundColor:colors.blueAccent[700],
+                            color: colors.grey[100],
+                            fontSize: "14px",
+                            fontWeight: "bold",
+                            padding: "10px 20px"}}
+                        
+                    >
+                        <PersonAddAltIcon/> Thêm mới
+                    </Button>
+                </Link>
+            </Box>
         </Box>
         <Box
             // m="40px 0 0 0"

@@ -125,7 +125,7 @@ export const Form = () => {
                             gridTemplateColumns="repeat(4, minmax(0, 1fr))"
                             sx={{
                                 "& > div": { gridColumn: isNonMobile ? undefined : "span 4" },
-                                margin:"0 50px 0 50px"
+                                margin:"30px 70px 0 70px"
                             }}
                         >
                             {/* STUDENT CODE */}
