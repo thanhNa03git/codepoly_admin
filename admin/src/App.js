@@ -13,6 +13,7 @@ import { Students } from "./pages/students";
 import { Chart } from "./pages/chart";
 import { Profile } from "./pages/profile";
 import { ChangeInfo } from "./pages/changeinfo";
+import { Auth } from "./components/Auth";
 
 
 function App() {
@@ -37,7 +38,7 @@ function App() {
                 {/* drop down */}
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/change" element={<ChangeInfo />} />
-                <Route path="/logout" element={<Chart />} />
+                <Route path="/logout" element={<Auth />} />
               </Routes>
             </main>
           </div>

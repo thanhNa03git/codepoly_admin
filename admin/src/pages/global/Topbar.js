@@ -18,9 +18,9 @@ export const Topbar = () => {
 
     // DROP DOWN MENU
     const dropMenuItems = [
-        {title: "Profile", to:"/profile"},
-        {title: "Setting", to:"/change"},
-        {title: "Log out", to:"/logout"},
+        {title: "Tài khoản cá nhân", to:"/profile"},
+        {title: "Đổi mật khẩu", to:"/change"},
+        {title: "Đăng nhập", to:"/logout"},
     ]
     const [anchorEl, setAnchorEl] = useState(null);
     const handleClick = (e) => {

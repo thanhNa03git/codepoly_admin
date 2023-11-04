@@ -260,11 +260,10 @@ export const Form = () => {
                         </Box>
                         {/* BUTTON CREATE */}
                         <Box display="flex" justifyContent="center" marginTop={"30px"} >
-
-                            <Button type="reset" onClick={resetForm} variant='contained' size='large'  sx={{fontWeight:"bold", marginRight:"20px"}}>
+                            <Button type="reset" onClick={resetForm} variant='contained' size='large' sx={{fontWeight:"bold", marginRight:"30px", width:"120px"}}>
                                 Làm trống
                             </Button>
-                            <Button type="submit" onClick={handleFormSubmit} validationSchema={checkoutForm} variant='contained' size='large' color='secondary' sx={{fontWeight:"bold"}}>
+                            <Button type="submit" onClick={handleFormSubmit} validationSchema={checkoutForm} variant='contained' size='large' color='secondary' sx={{fontWeight:"bold", width:"120px"}}>
                                 Tạo mới
                             </Button>
                         </Box>
